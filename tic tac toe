@@ -1,0 +1,940 @@
+Public Class Form1
+
+    Dim TL As Integer
+    Dim TM As Integer
+    Dim TR As Integer
+    Dim ML As Integer
+    Dim MM As Integer
+    Dim MR As Integer
+    Dim BL As Integer
+    Dim BM As Integer
+    Dim BR As Integer
+    Dim Turn As Integer
+    Dim TurnChanger As Integer
+    Dim Starter As Integer
+    Dim StarterChange As Integer
+
+
+    Private Sub btnCloseForm_Click(sender As Object, e As EventArgs) Handles btnCloseForm.Click
+        Close()
+    End Sub
+
+
+    Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        btnTL.Visible = False
+        btnTM.Visible = False
+        btnTR.Visible = False
+        btnML.Visible = False
+        btnMM.Visible = False
+        btnMR.Visible = False
+        btnBL.Visible = False
+        btnBM.Visible = False
+        btnBR.Visible = False
+        lblV1.Visible = False
+        lblV2.Visible = False
+        lblH1.Visible = False
+        lblH2.Visible = False
+    End Sub
+
+    Private Sub btnReset_Click(sender As Object, e As EventArgs) Handles btnReset.Click
+        btnTL.Text = " "
+        btnTR.Text = " "
+        btnTM.Text = " "
+        btnML.Text = " "
+        btnMM.Text = " "
+        btnMR.Text = " "
+        btnBL.Text = " "
+        btnBM.Text = " "
+        btnBR.Text = " "
+        TL = 0
+        TM = 0
+        TR = 0
+        ML = 0
+        MM = 0
+        MR = 0
+        BL = 0
+        BM = 0
+        BR = 0
+        btnTL.Visible = False
+        btnTM.Visible = False
+        btnTR.Visible = False
+        btnML.Visible = False
+        btnMM.Visible = False
+        btnMR.Visible = False
+        btnBL.Visible = False
+        btnBM.Visible = False
+        btnBR.Visible = False
+        lblV1.Visible = False
+        lblV2.Visible = False
+        lblH1.Visible = False
+        lblH2.Visible = False
+        btnTL.Enabled = True
+        btnTM.Enabled = True
+        btnTR.Enabled = True
+        btnML.Enabled = True
+        btnMM.Enabled = True
+        btnMR.Enabled = True
+        btnBL.Enabled = True
+        btnBM.Enabled = True
+        btnBR.Enabled = True
+        lblTurn.Text = " "
+        lblWinner.Text = " "
+    End Sub
+
+    Private Sub btn2player_Click(sender As Object, e As EventArgs) Handles btn2player.Click
+        btnTL.Visible = True
+        btnTM.Visible = True
+        btnTR.Visible = True
+        btnML.Visible = True
+        btnMM.Visible = True
+        btnMR.Visible = True
+        btnBL.Visible = True
+        btnBM.Visible = True
+        btnBR.Visible = True
+        lblV1.Visible = True
+        lblV2.Visible = True
+        lblH1.Visible = True
+        lblH2.Visible = True
+        lblHowToPlay.Visible = False
+        StarterChange = Starter * 2
+        If Starter = 0 Then
+            Do
+                Randomize()
+                Turn = (Rnd() * 2) + 1
+            Loop Until Turn = 1 Or Turn = 2
+            If Turn = 1 Then
+                lblTurn.Text = "X Starts"
+                Starter = 1
+            End If
+            If Turn = 2 Then
+                lblTurn.Text = "O Starts"
+                Starter = 2
+            End If
+        End If
+        If StarterChange = 4 Then
+            Turn = 1
+            Starter = 1
+            lblTurn.Text = "X Starts"
+        End If
+        If StarterChange = 2 Then
+            Turn = 2
+            Starter = 2
+            lblTurn.Text = "O Starts"
+        End If
+
+    End Sub
+
+    Private Sub btnTL_Click(sender As Object, e As EventArgs) Handles btnTL.Click
+        If Turn = 1 Then
+            btnTL.Text = "X"
+            TL = 1
+        End If
+        If Turn = 2 Then
+            btnTL.Text = "O"
+            TL = 2
+        End If
+        TurnChanger = Turn * 2
+        If TurnChanger = 2 Then
+            Turn = 2
+        End If
+        If TurnChanger = 4 Then
+            Turn = 1
+        End If
+        If Turn = 1 Then
+            lblTurn.Text = "X Turn"
+        End If
+        If Turn = 2 Then
+            lblTurn.Text = "O Turn"
+        End If
+        btnTL.Enabled = False
+        If TL = 1 And TM = 1 And TR = 1 Then
+            lblWinner.Text = "X WINS"
+            btnTL.Enabled = False
+            btnTM.Enabled = False
+            btnTR.Enabled = False
+            btnML.Enabled = False
+            btnMM.Enabled = False
+            btnMR.Enabled = False
+            btnBL.Enabled = False
+            btnBM.Enabled = False
+            btnBR.Enabled = False
+        End If
+        If TL = 1 And MM = 1 And BR = 1 Then
+            lblWinner.Text = "X WINS"
+            btnTL.Enabled = False
+            btnTM.Enabled = False
+            btnTR.Enabled = False
+            btnML.Enabled = False
+            btnMM.Enabled = False
+            btnMR.Enabled = False
+            btnBL.Enabled = False
+            btnBM.Enabled = False
+            btnBR.Enabled = False
+        End If
+        If TL = 1 And ML = 1 And BL = 1 Then
+            lblWinner.Text = "X WINS"
+            btnTL.Enabled = False
+            btnTM.Enabled = False
+            btnTR.Enabled = False
+            btnML.Enabled = False
+            btnMM.Enabled = False
+            btnMR.Enabled = False
+            btnBL.Enabled = False
+            btnBM.Enabled = False
+            btnBR.Enabled = False
+        End If
+        If TL = 2 And TM = 2 And TR = 2 Then
+            lblWinner.Text = "O WINS"
+            btnTL.Enabled = False
+            btnTM.Enabled = False
+            btnTR.Enabled = False
+            btnML.Enabled = False
+            btnMM.Enabled = False
+            btnMR.Enabled = False
+            btnBL.Enabled = False
+            btnBM.Enabled = False
+            btnBR.Enabled = False
+        End If
+        If TL = 2 And MM = 2 And BR = 2 Then
+            lblWinner.Text = "O WINS"
+            btnTL.Enabled = False
+            btnTM.Enabled = False
+            btnTR.Enabled = False
+            btnML.Enabled = False
+            btnMM.Enabled = False
+            btnMR.Enabled = False
+            btnBL.Enabled = False
+            btnBM.Enabled = False
+            btnBR.Enabled = False
+        End If
+        If TL = 2 And ML = 2 And BL = 2 Then
+            lblWinner.Text = "O WINS"
+            btnTL.Enabled = False
+            btnTM.Enabled = False
+            btnTR.Enabled = False
+            btnML.Enabled = False
+            btnMM.Enabled = False
+            btnMR.Enabled = False
+            btnBL.Enabled = False
+            btnBM.Enabled = False
+            btnBR.Enabled = False
+        End If
+    End Sub
+
+    Private Sub btnTM_Click(sender As Object, e As EventArgs) Handles btnTM.Click
+        TM = 1
+        If Turn = 1 Then
+            btnTM.Text = "X"
+            TM = 1
+        End If
+        If Turn = 2 Then
+            btnTM.Text = "O"
+            TM = 2
+        End If
+        TurnChanger = Turn * 2
+        If TurnChanger = 2 Then
+            Turn = 2
+        End If
+        If TurnChanger = 4 Then
+            Turn = 1
+        End If
+        If Turn = 1 Then
+            lblTurn.Text = "X Turn"
+        End If
+        If Turn = 2 Then
+            lblTurn.Text = "O Turn"
+        End If
+        btnTM.Enabled = False
+        If TL = 1 And TM = 1 And TR = 1 Then
+            lblWinner.Text = "X WINS"
+            btnTL.Enabled = False
+            btnTM.Enabled = False
+            btnTR.Enabled = False
+            btnML.Enabled = False
+            btnMM.Enabled = False
+            btnMR.Enabled = False
+            btnBL.Enabled = False
+            btnBM.Enabled = False
+            btnBR.Enabled = False
+        End If
+        If TM = 1 And MM = 1 And BM = 1 Then
+            lblWinner.Text = "X WINS"
+            btnTL.Enabled = False
+            btnTM.Enabled = False
+            btnTR.Enabled = False
+            btnML.Enabled = False
+            btnMM.Enabled = False
+            btnMR.Enabled = False
+            btnBL.Enabled = False
+            btnBM.Enabled = False
+            btnBR.Enabled = False
+        End If
+        If TL = 2 And TM = 2 And TR = 2 Then
+            lblWinner.Text = "O WINS"
+            btnTL.Enabled = False
+            btnTM.Enabled = False
+            btnTR.Enabled = False
+            btnML.Enabled = False
+            btnMM.Enabled = False
+            btnMR.Enabled = False
+            btnBL.Enabled = False
+            btnBM.Enabled = False
+            btnBR.Enabled = False
+        End If
+        If TM = 2 And MM = 2 And BM = 2 Then
+            lblWinner.Text = "O WINS"
+            btnTL.Enabled = False
+            btnTM.Enabled = False
+            btnTR.Enabled = False
+            btnML.Enabled = False
+            btnMM.Enabled = False
+            btnMR.Enabled = False
+            btnBL.Enabled = False
+            btnBM.Enabled = False
+            btnBR.Enabled = False
+        End If
+    End Sub
+
+    Private Sub btnTR_Click(sender As Object, e As EventArgs) Handles btnTR.Click
+        TR = 1
+        If Turn = 1 Then
+            btnTR.Text = "X"
+            TR = 1
+        End If
+        If Turn = 2 Then
+            btnTR.Text = "O"
+            TR = 2
+        End If
+        TurnChanger = Turn * 2
+        If TurnChanger = 2 Then
+            Turn = 2
+        End If
+        If TurnChanger = 4 Then
+            Turn = 1
+        End If
+        If Turn = 1 Then
+            lblTurn.Text = "X Turn"
+        End If
+        If Turn = 2 Then
+            lblTurn.Text = "O Turn"
+        End If
+        btnTR.Enabled = False
+        If TL = 1 And TM = 1 And TR = 1 Then
+            lblWinner.Text = "X WINS"
+            btnTL.Enabled = False
+            btnTM.Enabled = False
+            btnTR.Enabled = False
+            btnML.Enabled = False
+            btnMM.Enabled = False
+            btnMR.Enabled = False
+            btnBL.Enabled = False
+            btnBM.Enabled = False
+            btnBR.Enabled = False
+        End If
+        If TR = 1 And MM = 1 And BL = 1 Then
+            lblWinner.Text = "X WINS"
+            btnTL.Enabled = False
+            btnTM.Enabled = False
+            btnTR.Enabled = False
+            btnML.Enabled = False
+            btnMM.Enabled = False
+            btnMR.Enabled = False
+            btnBL.Enabled = False
+            btnBM.Enabled = False
+            btnBR.Enabled = False
+        End If
+        If TR = 1 And MR = 1 And BR = 1 Then
+            lblWinner.Text = "X WINS"
+            btnTL.Enabled = False
+            btnTM.Enabled = False
+            btnTR.Enabled = False
+            btnML.Enabled = False
+            btnMM.Enabled = False
+            btnMR.Enabled = False
+            btnBL.Enabled = False
+            btnBM.Enabled = False
+            btnBR.Enabled = False
+        End If
+        If TL = 2 And TM = 2 And TR = 2 Then
+            lblWinner.Text = "O WINS"
+            btnTL.Enabled = False
+            btnTM.Enabled = False
+            btnTR.Enabled = False
+            btnML.Enabled = False
+            btnMM.Enabled = False
+            btnMR.Enabled = False
+            btnBL.Enabled = False
+            btnBM.Enabled = False
+            btnBR.Enabled = False
+        End If
+        If TR = 2 And MM = 2 And BL = 2 Then
+            lblWinner.Text = "O WINS"
+            btnTL.Enabled = False
+            btnTM.Enabled = False
+            btnTR.Enabled = False
+            btnML.Enabled = False
+            btnMM.Enabled = False
+            btnMR.Enabled = False
+            btnBL.Enabled = False
+            btnBM.Enabled = False
+            btnBR.Enabled = False
+        End If
+        If TR = 2 And MR = 2 And BR = 2 Then
+            lblWinner.Text = "O WINS"
+            btnTL.Enabled = False
+            btnTM.Enabled = False
+            btnTR.Enabled = False
+            btnML.Enabled = False
+            btnMM.Enabled = False
+            btnMR.Enabled = False
+            btnBL.Enabled = False
+            btnBM.Enabled = False
+            btnBR.Enabled = False
+        End If
+    End Sub
+
+    Private Sub btnML_Click(sender As Object, e As EventArgs) Handles btnML.Click
+        ML = 1
+        If Turn = 1 Then
+            btnML.Text = "X"
+            ML = 1
+        End If
+        If Turn = 2 Then
+            btnML.Text = "O"
+            ML = 2
+        End If
+        TurnChanger = Turn * 2
+        If TurnChanger = 2 Then
+            Turn = 2
+        End If
+        If TurnChanger = 4 Then
+            Turn = 1
+        End If
+        If Turn = 1 Then
+            lblTurn.Text = "X Turn"
+        End If
+        If Turn = 2 Then
+            lblTurn.Text = "O Turn"
+        End If
+        btnML.Enabled = False
+        If TL = 1 And ML = 1 And BL = 1 Then
+            lblWinner.Text = "X WINS"
+            btnTL.Enabled = False
+            btnTM.Enabled = False
+            btnTR.Enabled = False
+            btnML.Enabled = False
+            btnMM.Enabled = False
+            btnMR.Enabled = False
+            btnBL.Enabled = False
+            btnBM.Enabled = False
+            btnBR.Enabled = False
+        End If
+        If ML = 1 And MM = 1 And MR = 1 Then
+            lblWinner.Text = "X WINS"
+            btnTL.Enabled = False
+            btnTM.Enabled = False
+            btnTR.Enabled = False
+            btnML.Enabled = False
+            btnMM.Enabled = False
+            btnMR.Enabled = False
+            btnBL.Enabled = False
+            btnBM.Enabled = False
+            btnBR.Enabled = False
+        End If
+        If TL = 2 And ML = 2 And BL = 2 Then
+            lblWinner.Text = "O WINS"
+            btnTL.Enabled = False
+            btnTM.Enabled = False
+            btnTR.Enabled = False
+            btnML.Enabled = False
+            btnMM.Enabled = False
+            btnMR.Enabled = False
+            btnBL.Enabled = False
+            btnBM.Enabled = False
+            btnBR.Enabled = False
+        End If
+        If ML = 2 And MM = 2 And MR = 2 Then
+            lblWinner.Text = "O WINS"
+            btnTL.Enabled = False
+            btnTM.Enabled = False
+            btnTR.Enabled = False
+            btnML.Enabled = False
+            btnMM.Enabled = False
+            btnMR.Enabled = False
+            btnBL.Enabled = False
+            btnBM.Enabled = False
+            btnBR.Enabled = False
+        End If
+    End Sub
+
+    Private Sub btnMM_Click(sender As Object, e As EventArgs) Handles btnMM.Click
+        MM = 1
+        If Turn = 1 Then
+            btnMM.Text = "X"
+            MM = 1
+        End If
+        If Turn = 2 Then
+            btnMM.Text = "O"
+            MM = 2
+        End If
+        TurnChanger = Turn * 2
+        If TurnChanger = 2 Then
+            Turn = 2
+        End If
+        If TurnChanger = 4 Then
+            Turn = 1
+        End If
+        If Turn = 1 Then
+            lblTurn.Text = "X Turn"
+        End If
+        If Turn = 2 Then
+            lblTurn.Text = "O Turn"
+        End If
+        btnMM.Enabled = False
+        If TL = 1 And MM = 1 And BR = 1 Then
+            lblWinner.Text = "X WINS"
+            btnTL.Enabled = False
+            btnTM.Enabled = False
+            btnTR.Enabled = False
+            btnML.Enabled = False
+            btnMM.Enabled = False
+            btnMR.Enabled = False
+            btnBL.Enabled = False
+            btnBM.Enabled = False
+            btnBR.Enabled = False
+        End If
+        If TM = 1 And MM = 1 And BM = 1 Then
+            lblWinner.Text = "X WINS"
+            btnTL.Enabled = False
+            btnTM.Enabled = False
+            btnTR.Enabled = False
+            btnML.Enabled = False
+            btnMM.Enabled = False
+            btnMR.Enabled = False
+            btnBL.Enabled = False
+            btnBM.Enabled = False
+            btnBR.Enabled = False
+        End If
+        If TR = 1 And MM = 1 And BL = 1 Then
+            lblWinner.Text = "X WINS"
+            btnTL.Enabled = False
+            btnTM.Enabled = False
+            btnTR.Enabled = False
+            btnML.Enabled = False
+            btnMM.Enabled = False
+            btnMR.Enabled = False
+            btnBL.Enabled = False
+            btnBM.Enabled = False
+            btnBR.Enabled = False
+        End If
+        If ML = 1 And MM = 1 And MR = 1 Then
+            lblWinner.Text = "X WINS"
+            btnTL.Enabled = False
+            btnTM.Enabled = False
+            btnTR.Enabled = False
+            btnML.Enabled = False
+            btnMM.Enabled = False
+            btnMR.Enabled = False
+            btnBL.Enabled = False
+            btnBM.Enabled = False
+            btnBR.Enabled = False
+        End If
+        If TL = 2 And MM = 2 And BR = 2 Then
+            lblWinner.Text = "O WINS"
+            btnTL.Enabled = False
+            btnTM.Enabled = False
+            btnTR.Enabled = False
+            btnML.Enabled = False
+            btnMM.Enabled = False
+            btnMR.Enabled = False
+            btnBL.Enabled = False
+            btnBM.Enabled = False
+            btnBR.Enabled = False
+        End If
+        If TM = 2 And MM = 2 And BM = 2 Then
+            lblWinner.Text = "O WINS"
+            btnTL.Enabled = False
+            btnTM.Enabled = False
+            btnTR.Enabled = False
+            btnML.Enabled = False
+            btnMM.Enabled = False
+            btnMR.Enabled = False
+            btnBL.Enabled = False
+            btnBM.Enabled = False
+            btnBR.Enabled = False
+        End If
+        If TR = 2 And MM = 2 And BL = 2 Then
+            lblWinner.Text = "O WINS"
+            btnTL.Enabled = False
+            btnTM.Enabled = False
+            btnTR.Enabled = False
+            btnML.Enabled = False
+            btnMM.Enabled = False
+            btnMR.Enabled = False
+            btnBL.Enabled = False
+            btnBM.Enabled = False
+            btnBR.Enabled = False
+        End If
+        If ML = 2 And MM = 2 And MR = 2 Then
+            lblWinner.Text = "O WINS"
+            btnTL.Enabled = False
+            btnTM.Enabled = False
+            btnTR.Enabled = False
+            btnML.Enabled = False
+            btnMM.Enabled = False
+            btnMR.Enabled = False
+            btnBL.Enabled = False
+            btnBM.Enabled = False
+            btnBR.Enabled = False
+        End If
+    End Sub
+
+    Private Sub btnMR_Click(sender As Object, e As EventArgs) Handles btnMR.Click
+        MR = 1
+        If Turn = 1 Then
+            btnMR.Text = "X"
+            MR = 1
+        End If
+        If Turn = 2 Then
+            btnMR.Text = "O"
+            MR = 2
+        End If
+        TurnChanger = Turn * 2
+        If TurnChanger = 2 Then
+            Turn = 2
+        End If
+        If TurnChanger = 4 Then
+            Turn = 1
+        End If
+        If Turn = 1 Then
+            lblTurn.Text = "X Turn"
+        End If
+        If Turn = 2 Then
+            lblTurn.Text = "O Turn"
+        End If
+        btnMR.Enabled = False
+        If TR = 1 And MR = 1 And BR = 1 Then
+            lblWinner.Text = "X WINS"
+            btnTL.Enabled = False
+            btnTM.Enabled = False
+            btnTR.Enabled = False
+            btnML.Enabled = False
+            btnMM.Enabled = False
+            btnMR.Enabled = False
+            btnBL.Enabled = False
+            btnBM.Enabled = False
+            btnBR.Enabled = False
+        End If
+        If ML = 1 And MM = 1 And MR = 1 Then
+            lblWinner.Text = "X WINS"
+            btnTL.Enabled = False
+            btnTM.Enabled = False
+            btnTR.Enabled = False
+            btnML.Enabled = False
+            btnMM.Enabled = False
+            btnMR.Enabled = False
+            btnBL.Enabled = False
+            btnBM.Enabled = False
+            btnBR.Enabled = False
+        End If
+        If TR = 2 And MR = 2 And BR = 2 Then
+            lblWinner.Text = "O WINS"
+            btnTL.Enabled = False
+            btnTM.Enabled = False
+            btnTR.Enabled = False
+            btnML.Enabled = False
+            btnMM.Enabled = False
+            btnMR.Enabled = False
+            btnBL.Enabled = False
+            btnBM.Enabled = False
+            btnBR.Enabled = False
+        End If
+        If ML = 2 And MM = 2 And MR = 2 Then
+            lblWinner.Text = "O WINS"
+            btnTL.Enabled = False
+            btnTM.Enabled = False
+            btnTR.Enabled = False
+            btnML.Enabled = False
+            btnMM.Enabled = False
+            btnMR.Enabled = False
+            btnBL.Enabled = False
+            btnBM.Enabled = False
+            btnBR.Enabled = False
+        End If
+    End Sub
+
+    Private Sub btnBL_Click(sender As Object, e As EventArgs) Handles btnBL.Click
+        BL = 1
+        If Turn = 1 Then
+            btnBL.Text = "X"
+            BL = 1
+        End If
+        If Turn = 2 Then
+            btnBL.Text = "O"
+            BL = 2
+        End If
+        TurnChanger = Turn * 2
+        If TurnChanger = 2 Then
+            Turn = 2
+        End If
+        If TurnChanger = 4 Then
+            Turn = 1
+        End If
+        If Turn = 1 Then
+            lblTurn.Text = "X Turn"
+        End If
+        If Turn = 2 Then
+            lblTurn.Text = "O Turn"
+        End If
+        btnBL.Enabled = False
+        If TL = 1 And ML = 1 And BL = 1 Then
+            lblWinner.Text = "X WINS"
+            btnTL.Enabled = False
+            btnTM.Enabled = False
+            btnTR.Enabled = False
+            btnML.Enabled = False
+            btnMM.Enabled = False
+            btnMR.Enabled = False
+            btnBL.Enabled = False
+            btnBM.Enabled = False
+            btnBR.Enabled = False
+        End If
+        If TR = 1 And MM = 1 And BL = 1 Then
+            lblWinner.Text = "X WINS"
+            btnTL.Enabled = False
+            btnTM.Enabled = False
+            btnTR.Enabled = False
+            btnML.Enabled = False
+            btnMM.Enabled = False
+            btnMR.Enabled = False
+            btnBL.Enabled = False
+            btnBM.Enabled = False
+            btnBR.Enabled = False
+        End If
+        If BL = 1 And BM = 1 And BR = 1 Then
+            lblWinner.Text = "X WINS"
+            btnTL.Enabled = False
+            btnTM.Enabled = False
+            btnTR.Enabled = False
+            btnML.Enabled = False
+            btnMM.Enabled = False
+            btnMR.Enabled = False
+            btnBL.Enabled = False
+            btnBM.Enabled = False
+            btnBR.Enabled = False
+        End If
+        If TL = 2 And ML = 2 And BL = 2 Then
+            lblWinner.Text = "O WINS"
+            btnTL.Enabled = False
+            btnTM.Enabled = False
+            btnTR.Enabled = False
+            btnML.Enabled = False
+            btnMM.Enabled = False
+            btnMR.Enabled = False
+            btnBL.Enabled = False
+            btnBM.Enabled = False
+            btnBR.Enabled = False
+        End If
+        If TR = 2 And MM = 2 And BL = 2 Then
+            lblWinner.Text = "O WINS"
+            btnTL.Enabled = False
+            btnTM.Enabled = False
+            btnTR.Enabled = False
+            btnML.Enabled = False
+            btnMM.Enabled = False
+            btnMR.Enabled = False
+            btnBL.Enabled = False
+            btnBM.Enabled = False
+            btnBR.Enabled = False
+        End If
+        If BL = 2 And BM = 2 And BR = 2 Then
+            lblWinner.Text = "O WINS"
+            btnTL.Enabled = False
+            btnTM.Enabled = False
+            btnTR.Enabled = False
+            btnML.Enabled = False
+            btnMM.Enabled = False
+            btnMR.Enabled = False
+            btnBL.Enabled = False
+            btnBM.Enabled = False
+            btnBR.Enabled = False
+        End If
+    End Sub
+
+    Private Sub btnBM_Click(sender As Object, e As EventArgs) Handles btnBM.Click
+        BM = 1
+        If Turn = 1 Then
+            btnBM.Text = "X"
+            BM = 1
+        End If
+        If Turn = 2 Then
+            btnBM.Text = "O"
+            BM = 2
+        End If
+        TurnChanger = Turn * 2
+        If TurnChanger = 2 Then
+            Turn = 2
+        End If
+        If TurnChanger = 4 Then
+            Turn = 1
+        End If
+        If Turn = 1 Then
+            lblTurn.Text = "X Turn"
+        End If
+        If Turn = 2 Then
+            lblTurn.Text = "O Turn"
+        End If
+        btnBM.Enabled = False
+        If BL = 1 And BM = 1 And BR = 1 Then
+            lblWinner.Text = "X WINS"
+            btnTL.Enabled = False
+            btnTM.Enabled = False
+            btnTR.Enabled = False
+            btnML.Enabled = False
+            btnMM.Enabled = False
+            btnMR.Enabled = False
+            btnBL.Enabled = False
+            btnBM.Enabled = False
+            btnBR.Enabled = False
+        End If
+        If TM = 1 And MM = 1 And BM = 1 Then
+            lblWinner.Text = "X WINS"
+            btnTL.Enabled = False
+            btnTM.Enabled = False
+            btnTR.Enabled = False
+            btnML.Enabled = False
+            btnMM.Enabled = False
+            btnMR.Enabled = False
+            btnBL.Enabled = False
+            btnBM.Enabled = False
+            btnBR.Enabled = False
+        End If
+        If BL = 2 And BM = 2 And BR = 2 Then
+            lblWinner.Text = "O WINS"
+            btnTL.Enabled = False
+            btnTM.Enabled = False
+            btnTR.Enabled = False
+            btnML.Enabled = False
+            btnMM.Enabled = False
+            btnMR.Enabled = False
+            btnBL.Enabled = False
+            btnBM.Enabled = False
+            btnBR.Enabled = False
+        End If
+        If TM = 2 And MM = 2 And BM = 2 Then
+            lblWinner.Text = "O WINS"
+            btnTL.Enabled = False
+            btnTM.Enabled = False
+            btnTR.Enabled = False
+            btnML.Enabled = False
+            btnMM.Enabled = False
+            btnMR.Enabled = False
+            btnBL.Enabled = False
+            btnBM.Enabled = False
+            btnBR.Enabled = False
+        End If
+    End Sub
+
+    Private Sub btnBR_Click(sender As Object, e As EventArgs) Handles btnBR.Click
+        BR = 1
+        If Turn = 1 Then
+            btnBR.Text = "X"
+            BR = 1
+        End If
+        If Turn = 2 Then
+            btnBR.Text = "O"
+            BR = 2
+        End If
+        TurnChanger = Turn * 2
+        If TurnChanger = 2 Then
+            Turn = 2
+        End If
+        If TurnChanger = 4 Then
+            Turn = 1
+        End If
+        If Turn = 1 Then
+            lblTurn.Text = "X Turn"
+        End If
+        If Turn = 2 Then
+            lblTurn.Text = "O Turn"
+        End If
+        btnBR.Enabled = False
+        If TL = 1 And MM = 1 And BR = 1 Then
+            lblWinner.Text = "X WINS"
+            btnTL.Enabled = False
+            btnTM.Enabled = False
+            btnTR.Enabled = False
+            btnML.Enabled = False
+            btnMM.Enabled = False
+            btnMR.Enabled = False
+            btnBL.Enabled = False
+            btnBM.Enabled = False
+            btnBR.Enabled = False
+        End If
+        If TR = 1 And MR = 1 And BR = 1 Then
+            lblWinner.Text = "X WINS"
+            btnTL.Enabled = False
+            btnTM.Enabled = False
+            btnTR.Enabled = False
+            btnML.Enabled = False
+            btnMM.Enabled = False
+            btnMR.Enabled = False
+            btnBL.Enabled = False
+            btnBM.Enabled = False
+            btnBR.Enabled = False
+        End If
+        If BL = 1 And BM = 1 And BR = 1 Then
+            lblWinner.Text = "X WINS"
+            btnTL.Enabled = False
+            btnTM.Enabled = False
+            btnTR.Enabled = False
+            btnML.Enabled = False
+            btnMM.Enabled = False
+            btnMR.Enabled = False
+            btnBL.Enabled = False
+            btnBM.Enabled = False
+            btnBR.Enabled = False
+        End If
+        If TL = 2 And MM = 2 And BR = 2 Then
+            lblWinner.Text = "O WINS"
+            btnTL.Enabled = False
+            btnTM.Enabled = False
+            btnTR.Enabled = False
+            btnML.Enabled = False
+            btnMM.Enabled = False
+            btnMR.Enabled = False
+            btnBL.Enabled = False
+            btnBM.Enabled = False
+            btnBR.Enabled = False
+        End If
+        If TR = 2 And MR = 2 And BR = 2 Then
+            lblWinner.Text = "O WINS"
+            btnTL.Enabled = False
+            btnTM.Enabled = False
+            btnTR.Enabled = False
+            btnML.Enabled = False
+            btnMM.Enabled = False
+            btnMR.Enabled = False
+            btnBL.Enabled = False
+            btnBM.Enabled = False
+            btnBR.Enabled = False
+        End If
+        If BL = 2 And BM = 2 And BR = 2 Then
+            lblWinner.Text = "O WINS"
+            btnTL.Enabled = False
+            btnTM.Enabled = False
+            btnTR.Enabled = False
+            btnML.Enabled = False
+            btnMM.Enabled = False
+            btnMR.Enabled = False
+            btnBL.Enabled = False
+            btnBM.Enabled = False
+            btnBR.Enabled = False
+        End If
+    End Sub
+
+    Private Sub btnHowToPlay_Click(sender As Object, e As EventArgs) Handles btnHowToPlay.Click
+        lblHowToPlay.Visible = True
+        lblHowToPlay.Text = "two players, X and O, take turns marking the spaces in a 3×3 grid. The player who succeeds in placing three respective marks in a horizontal, vertical, or diagonal row wins the game."
+    End Sub
+End Class
