@@ -1,0 +1,13 @@
+E:\Uni year 2\Concurrent Network Application\SimpleClientServer\SimpleChatClient\obj\Debug\SimpleChatClient.Properties.Resources.resources
+E:\Uni year 2\Concurrent Network Application\SimpleClientServer\SimpleChatClient\obj\Debug\SimpleChatClient.csproj.GenerateResource.Cache
+E:\Uni year 2\Concurrent Network Application\SimpleClientServer\SimpleChatClient\bin\Debug\SimpleChatClient.exe.config
+E:\Uni year 2\Concurrent Network Application\SimpleClientServer\SimpleChatClient\bin\Debug\SimpleChatClient.exe
+E:\Uni year 2\Concurrent Network Application\SimpleClientServer\SimpleChatClient\bin\Debug\SimpleChatClient.pdb
+E:\Uni year 2\Concurrent Network Application\SimpleClientServer\SimpleChatClient\obj\Debug\SimpleChatClient.exe
+E:\Uni year 2\Concurrent Network Application\SimpleClientServer\SimpleChatClient\obj\Debug\SimpleChatClient.pdb
+E:\Uni year 2\Concurrent Network Application\SimpleClientServer\SimpleChatClient\obj\Debug\SimpleChatClient.SimpleChatClient.resources
+E:\Uni year 2\Concurrent Network Application\SimpleClientServer\SimpleChatClient\bin\Debug\Shared.dll
+E:\Uni year 2\Concurrent Network Application\SimpleClientServer\SimpleChatClient\bin\Debug\Shared.pdb
+E:\Uni year 2\Concurrent Network Application\SimpleClientServer\SimpleChatClient\obj\Debug\SimpleChatClient.csprojAssemblyReference.cache
+E:\Uni year 2\Concurrent Network Application\SimpleClientServer\SimpleChatClient\obj\Debug\SimpleChatClient.csproj.CoreCompileInputs.cache
+E:\Uni year 2\Concurrent Network Application\SimpleClientServer\SimpleChatClient\obj\Debug\SimpleChatClient.csproj.CopyComplete

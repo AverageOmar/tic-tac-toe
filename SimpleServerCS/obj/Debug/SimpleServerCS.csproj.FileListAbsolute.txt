@@ -1,0 +1,14 @@
+H:\MGSE\Week2\staffscgp-simpleservercs-f25253072c65\SimpleServerCS\bin\Debug\SimpleServerCS.exe
+H:\MGSE\Week2\staffscgp-simpleservercs-f25253072c65\SimpleServerCS\bin\Debug\SimpleServerCS.pdb
+H:\MGSE\Week2\staffscgp-simpleservercs-f25253072c65\SimpleServerCS\obj\Debug\SimpleServerCS.csprojResolveAssemblyReference.cache
+H:\MGSE\Week2\staffscgp-simpleservercs-f25253072c65\SimpleServerCS\obj\Debug\SimpleServerCS.exe
+H:\MGSE\Week2\staffscgp-simpleservercs-f25253072c65\SimpleServerCS\obj\Debug\SimpleServerCS.pdb
+H:\2015\Sem1\MGSE\Week2\staffscgp-simpleservercs-f25253072c65\SimpleServerCS\bin\Debug\SimpleServerCS.exe.config
+H:\2015\Sem1\MGSE\Week2\staffscgp-simpleservercs-f25253072c65\SimpleServerCS\obj\Debug\SimpleServerCS.exe
+H:\2015\Sem1\MGSE\Week2\staffscgp-simpleservercs-f25253072c65\SimpleServerCS\obj\Debug\SimpleServerCS.pdb
+H:\2015\Sem1\CNA\Week3\simpleservercs\SimpleServerCS\bin\Debug\SimpleServerCS.exe.config
+H:\2015\Sem1\CNA\Week3\simpleservercs\SimpleServerCS\obj\Debug\SimpleServerCS.exe
+H:\2015\Sem1\CNA\Week3\simpleservercs\SimpleServerCS\obj\Debug\SimpleServerCS.pdb
+H:\2015\Sem1\CNA\Week3\simpleservercs\SimpleServerCS\bin\Debug\SimpleServerCS.exe
+H:\2015\Sem1\CNA\Week3\simpleservercs\SimpleServerCS\bin\Debug\SimpleServerCS.pdb
+H:\2015\Sem1\CNA\Week3\simpleservercs\SimpleServerCS\obj\Debug\SimpleServerCS.csprojResolveAssemblyReference.cache

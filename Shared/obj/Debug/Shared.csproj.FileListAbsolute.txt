@@ -1,0 +1,6 @@
+E:\Uni year 2\Concurrent Network Application\SimpleClientServer\Shared\bin\Debug\Shared.dll
+E:\Uni year 2\Concurrent Network Application\SimpleClientServer\Shared\bin\Debug\Shared.pdb
+E:\Uni year 2\Concurrent Network Application\SimpleClientServer\Shared\obj\Debug\Shared.dll
+E:\Uni year 2\Concurrent Network Application\SimpleClientServer\Shared\obj\Debug\Shared.pdb
+E:\Uni year 2\Concurrent Network Application\SimpleClientServer\Shared\obj\Debug\Shared.csprojAssemblyReference.cache
+E:\Uni year 2\Concurrent Network Application\SimpleClientServer\Shared\obj\Debug\Shared.csproj.CoreCompileInputs.cache
